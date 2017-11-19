@@ -1,13 +1,13 @@
 {
   "name": "node-prune",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "easily pruning unneeded files from node_modules",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "prune": "./prune.sh"
+    "node-prune": "./prune.sh"
   },
   "keywords": [
     "prune",
