@@ -15,19 +15,19 @@ Original script written by [gpittarelli](https://gist.github.com/gpittarelli/64d
 npm install -g node-prune
 ```
 
-Output
-
-```
-Before: 135M .
-After: 112M .
-```
-
 ## Usage
 
 `cd` to project root and issue the following command.
 
 ``` sh
 node-prune
+```
+
+Output
+
+```
+Before: 135M .
+After: 112M .
 ```
 
 ## License
