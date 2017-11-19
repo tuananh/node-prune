@@ -1,0 +1,22 @@
+{
+  "name": "node-prune",
+  "version": "1.0.0",
+  "description": "easily pruning unneeded files from node_modules",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "prune": "./prune.sh"
+  },
+  "keywords": [
+    "prune",
+    "node_modules"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tuananh/node-prune.git"
+  },
+  "author": "Tuan Anh Tran <me@tuananh.org> (https://tuananh.org)",
+  "license": "MIT"
+}
