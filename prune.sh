@@ -33,7 +33,7 @@ find . -type d -name node_modules -prune -exec find {} -type f \( \
   \) -print0 \; | xargs -0 rm -rf
 
 # Common unneeded directories
-find . -type d -name node_modules -prune -exec find {} -type d \( \
+find ./ttt -type d -name node_modules -prune -exec find {} -type d \( \
     -name __tests__ -or \
     -name test -or \
     -name tests -or \
@@ -45,7 +45,8 @@ find . -type d -name node_modules -prune -exec find {} -type d \( \
     -name assets -or \
     -name example -or \
     -name examples -or \
-    -name coverage -or \
+    -name 'images' -or \
+    ! -path '*ttt/images' -or \
     -name .nyc_output \
   \) -print0 \; | xargs -0 rm -rf
 
