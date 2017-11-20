@@ -21,8 +21,7 @@
     "*.md",
     "*.ts",
     "*.jst",
-    "*.coffee",
-    "!*.d.ts"
+    "*.coffee"
   ],
   "folders": [
     "__tests__",
@@ -38,5 +37,8 @@
     "examples",
     "coverage",
     ".nyc_output"
+  ],
+  "ignores": [
+    "*.d.ts"
   ]
 }
