@@ -1,13 +1,10 @@
 {
-  "name": "node-prune",
-  "version": "1.0.1",
-  "description": "easily pruning unneeded files from node_modules",
+  "name": "n-prune",
+  "version": "1.0.0",
+  "description": "easily pruning unneeded files",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "bin": {
-    "node-prune": "./prune.sh"
+    "test": "mocha"
   },
   "keywords": [
     "prune",
@@ -15,8 +12,26 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/tuananh/node-prune.git"
+    "url": "https://github.com/zxdong262/n-prune.git"
   },
-  "author": "Tuan Anh Tran <me@tuananh.org> (https://tuananh.org)",
+  "author": {
+    "email": "zxdong@gmail.com",
+    "name": "ZHAO Xudong",
+    "url": "http://html5beta.com"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "engines": {
+    "node": ">=7.5"
+  },
+  "dependencies": {
+    "commander": "*",
+    "minimatch": "3.0.4",
+    "shelljs": "0.7.8"
+  },
+  "bin": {
+    "n-prune": "bin/n-prune.js"
+  },
   "license": "MIT"
 }
