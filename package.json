@@ -20,7 +20,6 @@
     "url": "http://html5beta.com"
   },
   "devDependencies": {
-    "bluebird": "3.5.1",
     "mocha": "*"
   },
   "engines": {

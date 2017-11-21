@@ -1,12 +1,14 @@
 # n-prune
 
-> Easily pruning unneeded files from `node_modules` or whatever any folder.
+[![Build Status](https://travis-ci.org/zxdong262/n-prune.svg?branch=master)](https://travis-ci.org/zxdong262/n-prune)
+
+> Easily pruning unneeded files from `node_modules` or any folder.
 
 Original script written by [gpittarelli](https://gist.github.com/gpittarelli/64d1e9b7c1a4af762ec467b1c7571dc2).
 
 ## Use cases:
 
-- Optmize for sizes for production build
+- Optmize for sizes for production build (do not support windows)
 
 ## Installation
 
@@ -20,16 +22,30 @@ npm i -D node-prune
 ```
 
 ## Usage
+```
+
+  Usage: n-prune [dir]
+
+  prune unwanted files and folders, default target is ./node_modules
+
+
+  Options:
+
+    -V, --version  output the version number
+    -c, --config   sepcific config file, visit https://github.com/zxdong262/n-prune for config file detail
+    -h, --help     output usage information
+```
+
 ``` sh
 # `cd` to project root and issue the following command.
 n-prune
 
 # or n-prune specific folder and specific config
-n-prune /xx/node_modules -c /xx/.prune.json
+n-prune /xx/node_modules -c /xx/prune.json
 ```
 
 ## customnize
-create json config file format like this:(if not specific，this is default)
+create json config file format like this:
 
 ```js
 {
@@ -55,8 +71,7 @@ create json config file format like this:(if not specific，this is default)
     "*.md",
     "*.ts",
     "*.jst",
-    "*.coffee",
-    "!*.d.ts"
+    "*.coffee"
   ],
   "folders": [
     "__tests__",
@@ -72,17 +87,25 @@ create json config file format like this:(if not specific，this is default)
     "examples",
     "coverage",
     ".nyc_output"
+  ],
+  "ignores": [
+    "save1/images",
+    "save2/images",
+    "*.d.ts",
+    "*.x.ts"
   ]
 }
 ```
-ignore pattern starts with `!`
 
 
 ## Output
 
 ```
-Before: 135M .
-After: 112M .
+prune folder: /home/zxd/dev/n-prune/test/temp/p3/node_modules
+before prune:
+76K     .
+after prune:
+60K     .
 ```
 
 ## License

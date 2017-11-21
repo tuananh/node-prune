@@ -21,9 +21,7 @@
     "*.md",
     "*.ts",
     "*.jst",
-    "*.coffee",
-    "!*.d.ts",
-    "!*.x.ts"
+    "*.coffee"
   ],
   "folders": [
     "__tests__",
@@ -38,8 +36,12 @@
     "example",
     "examples",
     "coverage",
-    "!save1/images/*",
-    "!save2/images/*",
     ".nyc_output"
+  ],
+  "ignores": [
+    "save1/images",
+    "save2/images",
+    "*.d.ts",
+    "*.x.ts"
   ]
 }
