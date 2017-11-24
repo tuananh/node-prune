@@ -1,6 +1,6 @@
 {
   "name": "node-prune",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "easily pruning unneeded files from node_modules",
   "main": "index.js",
   "scripts": {
