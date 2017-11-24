@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 # Port of https://github.com/tj/node-prune to bash
 #
 # Prunes common files that are unnecessarily published in npm packages
