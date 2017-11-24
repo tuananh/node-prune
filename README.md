@@ -9,6 +9,14 @@ Original script written by [gpittarelli](https://gist.github.com/gpittarelli/64d
 - Optmize for sizes for aws lambda functions
 - You haven't heard of `yarn` and `yarn autoclean`
 
+## Docker
+
+`cd` to project root and issue the following command.
+
+```
+docker run --rm -v ${PWD}:/app hochzehn/node-prune
+```
+
 ## Installation
 
 ```

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 # Port of https://github.com/tj/node-prune to bash
 # Also,
 #   - fixed "*.ts" being overzealous and killing .d.ts files
