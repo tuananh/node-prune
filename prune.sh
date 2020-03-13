@@ -15,11 +15,22 @@
 # TODO/unclear:
 # - *.map files
 
-echo "Before: "$(du -hs .)
-echo "Files: "$(find node_modules/ -type f | wc -l)
+if [ -n "$1" ]; then WD="$PWD/$1"; else WD=$PWD; fi
 
-# Common unneeded files
-find . -type d -name node_modules -prune -exec find {} -type f \( \
+run () {
+  (cd "$WD" && eval "$@") | sed 's/[[:space:]].//g'
+}
+
+stats() {
+  SIZE=$(run du -hs)
+  FILES=$(run find node_modules/ -type f \| wc -l)
+  echo "$1: $SIZE ($FILES files)"
+}
+
+stats "Before"
+
+# Common unnecessary files
+run find . -type d -name node_modules -prune -exec find {} -type f \\\( \
     -iname Makefile -or \
     -iname README -or \
     -iname README.md -or \
@@ -66,15 +77,15 @@ find . -type d -name node_modules -prune -exec find {} -type f \( \
     -name "*.gypi" -or \
     -name "*.vcxproj" -or \
     -name "*.vcxproj.filters" -or \
-    \( -name '*.ts' -and \! -name '*.d.ts' \) -or \
+    \\\( -name '*.ts' -and \\\! -name '*.d.ts' \\\) -or \
     -name "*.jst" -or \
     -name "*.coffee" \
-  \) -print0 \; | xargs -0 rm -rf
+  \\\) -print0 \\\; \| xargs -0 rm -rf
 
-# Common unneeded directories
-find . -type d -name node_modules -prune -exec find {} -type d \( \
+# Common unnecessary folders
+# Skip the `test` folder as there is actually (useful) module with that name.
+run find . -type d -name node_modules -prune -exec find {} -type d \\\( \
     -name __tests__ -or \
-    -name test -or \
     -name tests -or \
     -name powered-test -or \
     -name docs -or \
@@ -89,8 +100,6 @@ find . -type d -name node_modules -prune -exec find {} -type d \( \
     -name node-pre-gyp -or \
     -name gyp -or \
     -name .nyc_output \
-  \) -print0 \; | xargs -0 rm -rf
+  \\\) -print0 \\\; \| xargs -0 rm -rf
 
-
-echo "After: "$(du -hs .)
-echo "Files: "$(find node_modules/ -type f | wc -l)
+stats "After"
