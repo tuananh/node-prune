@@ -33,11 +33,17 @@ npm install -g node-prune
 node-prune
 ```
 
+
+``` sh
+node-prune [path/to/prune]
+```
+> This path is relative to the current working directory.
+
 Output
 
 ```
-Before: 135M .
-After: 112M .
+ | Before: 135M (3653 files)
+ | After: 112M (3102 files)
 ```
 
 ## License
